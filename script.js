@@ -25,7 +25,7 @@ var force = d3.layout.force()
         .charge(-300);
 
 // filtered types
-var typeFilterList = ['Romantic', 'Professional', 'Familial'];
+var typeFilterList = [];
 $("#Filters").text(typeFilterList.join(" "));
 
 // filter button event handlers
@@ -129,7 +129,7 @@ function update() {
         .data(links)
         .enter().append("line")
         .attr("class", function (d) {
-            return "link " + d.type;
+            return "link " + d.nature + " weight" + d.weight;
         });
 
     // Create the node circles.

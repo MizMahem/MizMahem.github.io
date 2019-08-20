@@ -1,51 +1,55 @@
 .link {
-  stroke: #999;
-  stroke-opacity: .6;
+    stroke: #999;
+    stroke-opacity: .6;
 }
 
 .node {
-  stroke: #fff;
-  stroke-width: .5px;
+    stroke: #fff;
+    stroke-width: .5px;
 }
 
 .node text {
-  pointer-events: none;
-  font: 15px sans-serif;
-  font-weight: bolder;
+    pointer-events: none;
+    font: 15px sans-serif;
+    font-weight: bolder;
 }
 
 .node.group1{
-  fill: green;
-  stroke-opacity: .3; 
-  stroke-width: 4;
+    fill: green;
+    stroke-opacity: .3; 
+    stroke-width: 4;
 }
 
 .node.group2{
-  fill: red;
-  stroke-opacity: .3; 
-  stroke-width: 4;
+    fill: red;
+    stroke-opacity: .3; 
+    stroke-width: 4;
 }
 
-.node.group3{
-  fill: blue;
-  stroke-opacity: .3;
-  stroke-width: 4; 
+.node.group3 {
+    fill: blue;
+    stroke-opacity: .3;
+    stroke-width: 4; 
 }
 
-.node.group4{
-  fill: black;
-  stroke-opacity: .3; 
-  stroke-width: 4;
+.node.group4 {
+    fill: black;
+    stroke-opacity: .3; 
+    stroke-width: 4;
 }
 
-.link.type1{
-  stroke: black;
-  stroke-opacity: .3; 
-  stroke-width: 4;
+.link {
+    stroke-opacity: .5;
 }
 
-.link.type2{
-  stroke: red;
-  stroke-opacity: .3; 
-  stroke-width: 4;
-}
+.link.weight1 { stroke-width: 1; }
+.link.weight2 { stroke-width: 2; }
+.link.weight3 { stroke-width: 3; }
+.link.weight4 { stroke-width: 4; }
+.link.weight5 { stroke-width: 5; }
+
+.link.Romantic     { stroke: red; }
+
+.link.Professional { stroke: blue; }
+
+.link.Familial     { stroke: green; }
