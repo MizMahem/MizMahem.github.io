@@ -203,14 +203,14 @@ function update() {
 
     force.on("tick", function () {
         link
-			.attr("x1", function (d) { return d.source.x; })
-			.attr("y1", function (d) { return d.source.y; })
-			.attr("x2", function (d) { return d.target.x; })
-			.attr("y2", function (d) { return d.target.y; });
+            .attr("x1", function (d) { return d.source.x; })
+            .attr("y1", function (d) { return d.source.y; })
+            .attr("x2", function (d) { return d.target.x; })
+            .attr("y2", function (d) { return d.target.y; });
 
-		linkLabels
-			.attr("x", function(d) { return ((d.source.x + d.target.x) / 2); })
-			.attr("y", function(d) { return ((d.source.y + d.target.y) / 2); });
+        linkLabels
+            .attr("x", function(d) { return ((d.source.x + d.target.x) / 2); })
+            .attr("y", function(d) { return ((d.source.y + d.target.y) / 2); });
 
 //		linkPaths.attr('d', function(d) { return  ["M", d.source.x, d.source.y, "L", d.target.x, d.target.y].join(" "); });
 

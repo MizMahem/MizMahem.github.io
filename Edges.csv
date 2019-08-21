@@ -13,7 +13,7 @@ ID,SName,TName,Type,Nature,Weight,Source,Target,Description
 11,Jaune,Pyrrha,undirected,Romantic,1,1,6,
 12,Jaune,Saphron,undirected,Familial,5,1,10,Siblings
 13,Ruby,Weiss,undirected,Romantic,1,2,3,
-14,Ruby,Yang,undirected,Familial,5,2,5,Step-Siblings
+14,Ruby,Yang,undirected,Familial,5,2,5,Half-Siblings
 15,Ruby,Yang,undirected,Professional,1,2,5,
 15,Ruby,Nora,undirected,Romantic,1,2,7,
 16,Ruby,Glynda,undirected,Professional,1,2,8,
@@ -34,3 +34,8 @@ ID,SName,TName,Type,Nature,Weight,Source,Target,Description
 30,Glynda,Winter,undirected,Professional,4,8,9,
 31,Glynda,Winter,undirected,Romantic,3,8,9,
 32,Glynda,Saphron,undirected,Familial,2,8,10,Aunt-Nephew
+33,Zwei,Ruby,undirected,Familial,5,11,2,Master-Dog
+34,Zwei,Ruby,undirected,Romantic,5,11,2,
+35,Zwei,Weiss,undirected,Romantic,5,11,3,
+36,Zwei,Yang,undirected,Romantic,3,11,5,
+37,Zwei,Yang,undirected,Familial,3,11,5,Master-Dog
