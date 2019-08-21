@@ -16,9 +16,15 @@ var storeNodes;
 var storeLinks;
 
 // filters
-var typeFilterList = [];
 var minWeight = 1;
 var maxWeight = 6;
+
+var typeFilterList = {};
+// get our values from the index, check box needs to be reversed.
+$("#typeFilters input").each(function() {
+    typeFilterList[$(this).val()] = !$(this).is(":checked"); 
+});
+console.log(typeFilterList);
 
 //Want to have different labels
 // SETTING UP THE FORCE LAYOUT
@@ -48,42 +54,35 @@ $("#weightFilterSlider").slider({
     }
 });
 
-// filter button event handlers
-$(".toggle").on("click", function() {
-    var id = $(this).attr("id");
-    if (typeFilterList.includes(id)) {
-    	typeFilterList.splice(typeFilterList.indexOf(id), 1);
-    } else {
-	typeFilterList.push(id);
-    }
-    
-    console.log(typeFilterList);
+// filter button event handlers, checked state needs to be reversed.
+$("#typeFilters .toggle").on("click", function() {
+    typeFilterList[$(this).val()] = !$(this).is(":checked");
     filter();
     update();
 });
 
 // filter function
 function filter() {
-//    console.log(typeFilterList);
+    console.log(typeFilterList);
     //	add and remove links from data based on type filters
-    storeLinks.forEach(function(link) {
+    storeLinks.forEach(function(link) {        
         link.filtered = false;
-        typeFilterList.forEach(function(filter) {
-            if (link.nature === filter ) {
-                link.filtered = true;
-//                console.log(link.id + filter + " filtered")
+        
+        Object.keys(typeFilterList).forEach(function(filter) {
+            if (link.nature === filter) {
+                link.filtered = !typeFilterList[filter];
             }
         });
         
         if (link.weight <= minWeight) {
             link.filtered = true;
         }
-		if (link.weight >= maxWeight) {
+        if (link.weight >= maxWeight) {
             link.filtered = true;
         }
     });
     
-    $("input#typeFiltersDisp").val(typeFilterList.join(" "));
+    console.log(storeLinks);
 }
 
 // get our data
@@ -111,7 +110,6 @@ d3.csv(nodepath, function (nodes) {
                 id: link.ID,
                 source: nodelookup[link.SName],
                 target: nodelookup[link.TName],
-                type: link.Type,
                 nature: link.Nature,
                 weight: link.Weight,
                 desc: link.Description,
@@ -135,9 +133,10 @@ d3.csv(nodepath, function (nodes) {
 function update() {
     var nodes = storeNodes;
     var links = [];
-    storeLinks.forEach(function(l) {
-        if(l.filtered === false) {
-            links.push(l);
+    storeLinks.forEach(function(link) {
+        if(link.filtered === false) {
+            links.push(link);
+//            console.log(link.id, link.filtered);
         }
     });
     
