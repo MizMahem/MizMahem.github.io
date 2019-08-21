@@ -1,14 +1,41 @@
+body {
+	font: 1em sans-serif;
+}
+
+svg#templates { 
+	width: 0;
+	height: 0;
+	display: block;
+}
+
+div#controls {
+	display: flex;
+}
+
+#typeFilter label { 
+	border: 1px solid black !important;
+	color: black !important;
+	}
+label#rlabel { background: rgba(255, 0, 0, .5); }
+label#plabel { background: rgba(0, 0, 255, .5); }
+label#flabel { background: rgba(0, 255, 0, .5); }
+
+label.ui-checkboxradio-checked {
+	background: grey !important;
+}
+
 input#minWeight {
     width: 5em;
 }
 
-div#minWeightSlider {
+div#weightFilterSlider {
     width: 18em;
-    margin: 0 1em;
+    margin: .5em 1em;
 }
-.node {
-    stroke: #fff;
-    stroke-width: .5px;
+ circle.node {
+    stroke: black;
+    stroke-width: .1em;
+	fill: grey;
 }
 
 .node text {
@@ -16,6 +43,17 @@ div#minWeightSlider {
     font: 1em sans-serif;
     font-weight: bolder;
 }
+
+.pJaune		{ fill: Yellow	!important; }
+.pRuby		{ fill: Red		!important; }
+.pWeiss		{ fill: White	!important; }
+.pBlake		{ fill: Black	!important; }
+.pYang		{ fill: Yellow	!important; }
+.pPyrrha	{ fill: Red		!important; }
+.pNora		{ fill: Pink	!important; }
+.pGlynda	{ fill: Purple	!important; }
+.pWinter	{ fill: White	!important; }
+.pSaphron	{ fill: Yellow	!important; }
 
 .link {
     stroke-opacity: .5;

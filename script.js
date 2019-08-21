@@ -3,12 +3,15 @@ var linkpath = ("Edges.csv");
 var nodepath = ("Nodes.csv");
 
 var width = 1000, height = 600;
+var baseSize = 10;
+var sizeMult = 2;
 
 var color = d3.scale.category20();
 
 var svg = d3.select("body").append("svg")
         .attr("width", width)
-        .attr("height", height);
+        .attr("height", height)
+		.attr("id", "graph");
 
 // data stores
 var storeNodes;
@@ -17,6 +20,7 @@ var storeLinks;
 // filters
 var typeFilterList = [];
 var minWeight = 1;
+var maxWeight = 5;
 
 //Want to have different labels
 // SETTING UP THE FORCE LAYOUT
@@ -24,21 +28,23 @@ var force = d3.layout.force()
         //using width/height from above, but size is mainly det'd by linkDistance and charge
         .size([width, height])
         // how far between nodes                         
-        .linkDistance(120)
+        .linkDistance(240)
         // changes how close nodes will get to each other. Neg is farther apart.
-        .charge(-600);
+        .charge(-1200);
 
 // formating
 $(".toggle").button();
 
-$("#minWeightSlider").slider({
-    value: 1,
+$("#weightFilterSlider").slider({
+	range: true,
+    values: [1, 5],
     min: 0,
     max: 5,
     step: 1,
     slide: function (event, ui) {
-        $("#minWeight").val(ui.value);
-        minWeight = ui.value;
+        $("#weightFilterDisp").val(ui.values.join(" - "));
+        minWeight = ui.values[0];
+		maxWeight = ui.values[1];
         filter();
         update();
     }
@@ -73,9 +79,12 @@ function filter() {
         if (link.weight <= minWeight) {
             link.filtered = true;
         }
+		if (link.weight >= maxWeight) {
+            link.filtered = true;
+        }
     });
     
-    $("#Filters").text(typeFilterList.join(" "));
+    $("input#typeFiltersDisp").val(typeFilterList.join(" "));
 }
 
 // get our data
@@ -143,14 +152,14 @@ function update() {
         }
     });
     
-    $("svg").empty();
+    $("svg#graph").empty();
 
     // Create the link lines.
     var link = svg.selectAll(".link")
         .data(links)
         .enter().append("line")
         .attr("class", function (d) { return "link " + d.nature; })
-        .attr("stroke-width", function(d) { return (d.weight * 2); });
+        .attr("stroke-width", function(d) { return baseSize/2+(d.weight*sizeMult); });
 
     // Create the node circles.
     var node = svg.selectAll(".node")
@@ -162,24 +171,25 @@ function update() {
         })
         .call(force.drag);
 
-    //put in little circles to drag
-    node.append("circle")
-        .attr("r", 6)
-        .attr("class", function (d) {
-            return "node " + d.group;
-        })
+    //get it going!
+    force.nodes(nodes).links(links).start();
+
+	// these calculations have to come after force because weight is not calculated till then.
+	//put in little circles to drag
+	node.append("circle")
+        .attr("r", function (d) { return baseSize+(d.weight*sizeMult); })
+        .attr("class", function (d) { return ["node", d.group, "p"+d.name].join(" "); })
         .call(force.drag);
 
-    //add the words  
+	//add the words  
     node.append("text")
-        .attr("dx", 12)
+        .attr("dx", function (d) {
+			var offset = baseSize+(d.weight*sizeMult);
+			return offset * 1.25; })
         .attr("dy", ".35em")
         .text(function (d) {
             return d.name;
         });
-
-    //get it going!
-    force.nodes(nodes).links(links).start();
 
     force.on("tick", function () {
         link.attr("x1", function (d) {
@@ -199,9 +209,11 @@ function update() {
         node.attr("transform", function (d) {
             return "translate(" + d.x + "," + d.y + ")";
         });
+
+		
     });
 
-    console.log("update");
-    console.log(nodes);
-    console.log(links);
+//    console.log("update");
+//    console.log(nodes);
+//    console.log(links);
 }
