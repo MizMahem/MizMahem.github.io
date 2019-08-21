@@ -71,3 +71,8 @@ div#weightFilterSlider {
 .link.Professional { stroke: blue; }
 
 .link.Familial     { stroke: green; }
+
+ text.edgeDesc {
+	text-anchor: middle;
+	font: .75em sans-serif;
+}

@@ -79,7 +79,7 @@ function filter() {
         if (link.weight <= minWeight) {
             link.filtered = true;
         }
-		if (link.weight >= maxWeight) {
+		if (link.weight > maxWeight) {
             link.filtered = true;
         }
     });
@@ -96,13 +96,7 @@ d3.csv(nodepath, function (nodes) {
     // we want to create a lookup table that will relate the links file and the nodes file
     nodes.forEach(function (row) {
         nodelookup[row.Name] = count;
-
         nodecollector[row.Name] = {name: row.Name, group: row.Group};
-
-//        console.log(nodecollector);
-//        console.log(row.Name);
-//        console.log(nodelookup);
-
         count++;
     });
 
@@ -124,15 +118,11 @@ d3.csv(nodepath, function (nodes) {
                 desc: link.Description,
                 filtered: false
             };
-//            console.log(linkcollector[count]);
             count++;
         });
 
         var nodes = d3.values(nodecollector);
         var links = d3.values(linkcollector);
-
-        console.log(nodes);
-        console.log(links);
         
         storeNodes = nodes;
         storeLinks = links;
@@ -160,6 +150,12 @@ function update() {
         .enter().append("line")
         .attr("class", function (d) { return "link " + d.nature; })
         .attr("stroke-width", function(d) { return baseSize/2+(d.weight*sizeMult); });
+
+	var linkLabels = svg.selectAll(".link-label")
+		.data(links)
+		.enter().append('text')
+		.attr("class", "edgeDesc")
+		.text(function(d) { return d.desc; });
 
     // Create the node circles.
     var node = svg.selectAll(".node")
@@ -191,29 +187,25 @@ function update() {
             return d.name;
         });
 
+	link.on("click", function(d) {
+		console.log(d);
+	});
+
     force.on("tick", function () {
-        link.attr("x1", function (d) {
-            return d.source.x;
-        })
-                .attr("y1", function (d) {
-                    return d.source.y;
-                })
-                .attr("x2", function (d) {
-                    return d.target.x;
-                })
-                .attr("y2", function (d) {
-                    return d.target.y;
-                });
+        link
+			.attr("x1", function (d) { return d.source.x; })
+			.attr("y1", function (d) { return d.source.y; })
+			.attr("x2", function (d) { return d.target.x; })
+			.attr("y2", function (d) { return d.target.y; });
+
+		linkLabels
+			.attr("x", function(d) {return ((d.source.x + d.target.x) / 2); })
+			.attr("y", function(d) { return ((d.source.y + d.target.y) / 2);
+        });
 
         //I think that translate changes all of the x and ys at once instead of one by one?
         node.attr("transform", function (d) {
             return "translate(" + d.x + "," + d.y + ")";
         });
-
-		
     });
-
-//    console.log("update");
-//    console.log(nodes);
-//    console.log(links);
 }
