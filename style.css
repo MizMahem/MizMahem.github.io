@@ -12,6 +12,10 @@ div#controls {
 	display: flex;
 }
 
+div.box {
+	padding: 0 .5em;
+}
+
 #typeFilter label { 
 	border: 1px solid black !important;
 	color: black !important;
@@ -24,14 +28,17 @@ label.ui-checkboxradio-checked {
 	background: grey !important;
 }
 
-input#minWeight {
-    width: 5em;
+div#weightFilter { }
+
+input#weightFilterDisp {
+    width: 3em;
 }
 
 div#weightFilterSlider {
-    width: 18em;
-    margin: .5em 1em;
+    width: 100%;
+    margin: .5em 0em;
 }
+
  circle.node {
     stroke: black;
     stroke-width: .1em;
