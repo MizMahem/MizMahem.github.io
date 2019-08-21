@@ -8,49 +8,49 @@
         <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
     </head>
     <body>
-		<svg id="templates">
-			<defs>
-				<pattern id="pJaune" height="100%" width="100%" patternContentUnits="objectBoundingBox">
-					<image height="1" width="1" preserveAspectRatio="none" xlink:href="emblems/Jaune.svg" />
-				</pattern>
-				<pattern id="pRuby" height="100%" width="100%" patternContentUnits="objectBoundingBox">
-					<image height="1" width="1" preserveAspectRatio="none" xlink:href="emblems/Ruby.svg" />
-				</pattern>
-				<pattern id="pWeiss" height="100%" width="100%" patternContentUnits="objectBoundingBox">
-					<image height="1" width="1" preserveAspectRatio="none" xlink:href="emblems/Weiss.svg" />
-				</pattern>
-				<pattern id="pBlake" height="100%" width="100%" patternContentUnits="objectBoundingBox">
-					<image height="1" width="1" preserveAspectRatio="none" xlink:href="emblems/Blake.svg" />
-				</pattern>
-				<pattern id="pYang" height="100%" width="100%" patternContentUnits="objectBoundingBox">
-					<image height="1" width="1" preserveAspectRatio="none" xlink:href="emblems/Yang.svg" />
-				</pattern>
-				<pattern id="pPyrrha" height="100%" width="100%" patternContentUnits="objectBoundingBox">
-					<image height="1" width="1" preserveAspectRatio="none" xlink:href="emblems/Pyrrha.svg" />
-				</pattern>
-				<pattern id="pNora" height="100%" width="100%" patternContentUnits="objectBoundingBox">
-					<image height="1" width="1" preserveAspectRatio="none" xlink:href="emblems/Nora.svg" />
-				</pattern>
-				<pattern id="pGlynda" height="100%" width="100%" patternContentUnits="objectBoundingBox">
-					<image height="1" width="1" preserveAspectRatio="none" xlink:href="emblems/Glynda.svg" />
-				</pattern>
-			</defs>
-		</svg>
+        <svg id="templates">
+            <defs>
+                <pattern id="pJaune" height="100%" width="100%" patternContentUnits="objectBoundingBox">
+                    <image height="1" width="1" preserveAspectRatio="none" xlink:href="emblems/Jaune.svg" />
+                </pattern>
+                <pattern id="pRuby" height="100%" width="100%" patternContentUnits="objectBoundingBox">
+                    <image height="1" width="1" preserveAspectRatio="none" xlink:href="emblems/Ruby.svg" />
+                </pattern>
+                <pattern id="pWeiss" height="100%" width="100%" patternContentUnits="objectBoundingBox">
+                    <image height="1" width="1" preserveAspectRatio="none" xlink:href="emblems/Weiss.svg" />
+                </pattern>
+                <pattern id="pBlake" height="100%" width="100%" patternContentUnits="objectBoundingBox">
+                    <image height="1" width="1" preserveAspectRatio="none" xlink:href="emblems/Blake.svg" />
+                </pattern>
+                <pattern id="pYang" height="100%" width="100%" patternContentUnits="objectBoundingBox">
+                    <image height="1" width="1" preserveAspectRatio="none" xlink:href="emblems/Yang.svg" />
+                </pattern>
+                <pattern id="pPyrrha" height="100%" width="100%" patternContentUnits="objectBoundingBox">
+                    <image height="1" width="1" preserveAspectRatio="none" xlink:href="emblems/Pyrrha.svg" />
+                </pattern>
+                <pattern id="pNora" height="100%" width="100%" patternContentUnits="objectBoundingBox">
+                    <image height="1" width="1" preserveAspectRatio="none" xlink:href="emblems/Nora.svg" />
+                </pattern>
+                <pattern id="pGlynda" height="100%" width="100%" patternContentUnits="objectBoundingBox">
+                    <image height="1" width="1" preserveAspectRatio="none" xlink:href="emblems/Glynda.svg" />
+                </pattern>
+            </defs>
+        </svg>
 
         <div id="controls">
-			<div id="typeFilters" class="box">
-				<label id="plabel" for="Professional">Professional</label>
-				<input class="toggle" type="checkbox" id="Professional" value="true" />
-				<label id="rlabel" for="Romantic">Affection</label>
-				<input class="toggle" type="checkbox" id="Romantic" value="true" />
-				<label id="flabel" for="Familial">Familial</label>
-				<input class="toggle" type="checkbox" id="Familial" value="true" />
-			</div>
-			<div id="weightFilter" class="box">
-				<label for="weightFilterDisp">Weight Filter: </label>
-				<input type="text" id="weightFilterDisp" readonly value="1 - 6"/>
-				<div id="weightFilterSlider"></div>
-			</div>
+            <div id="typeFilters" class="box">
+                    <label id="plabel" for="Professional">Professional</label>
+                    <input class="toggle" type="checkbox" id="Professional" value="true" />
+                    <label id="rlabel" for="Affection">Affection</label>
+                    <input class="toggle" type="checkbox" id="Affection" value="true" />
+                    <label id="flabel" for="Familial">Familial</label>
+                    <input class="toggle" type="checkbox" id="Familial" value="true" />
+            </div>
+            <div id="weightFilter" class="box">
+                    <label for="weightFilterDisp">Weight Filter: </label>
+                    <input type="text" id="weightFilterDisp" readonly value="1 - 6"/>
+                    <div id="weightFilterSlider"></div>
+            </div>
         </div>
         
         <script src="//d3js.org/d3.v3.min.js"></script>

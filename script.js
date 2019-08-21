@@ -7,8 +7,6 @@ var width = 1000, height = 1000;
 var baseSize = 10;
 var sizeMult = 2;
 
-var color = d3.scale.category20();
-
 var svg = d3.select("body").append("svg")
             .attr("viewBox", "0 0 1000 1000")
             .attr("id", "graph");
@@ -59,6 +57,7 @@ $(".toggle").on("click", function() {
 	typeFilterList.push(id);
     }
     
+    console.log(typeFilterList);
     filter();
     update();
 });
@@ -188,14 +187,12 @@ function update() {
         .call(force.drag);
 
 	//add the words  
-    node.append("text")
-        .attr("dx", function (d) {
+        node.append("text")
+            .attr("dx", function (d) {
 			var offset = baseSize+(d.weight*sizeMult);
 			return offset * 1.25; })
-        .attr("dy", ".35em")
-        .text(function (d) {
-            return d.name;
-        });
+            .attr("dy", ".35em")
+            .text(function (d) { return d.name; });
 
 	link.on("click", function(d) {
 		console.log(d);

@@ -75,11 +75,11 @@ svg#graph {
     stroke-opacity: .5;
 }
 
-.link.Romantic     { stroke: red; }
+.link.Affection     { stroke: red; }
 
-.link.Professional { stroke: blue; }
+.link.Professional  { stroke: blue; }
 
-.link.Familial     { stroke: green; }
+.link.Familial      { stroke: green; }
 
  text.linkDesc {
 	text-anchor: middle;
