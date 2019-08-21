@@ -21,12 +21,6 @@ div#minWeightSlider {
     stroke-opacity: .5;
 }
 
-.link.weight1 { stroke-width: 1; }
-.link.weight2 { stroke-width: 2; }
-.link.weight3 { stroke-width: 3; }
-.link.weight4 { stroke-width: 4; }
-.link.weight5 { stroke-width: 5; }
-
 .link.Romantic     { stroke: red; }
 
 .link.Professional { stroke: blue; }

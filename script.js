@@ -149,9 +149,8 @@ function update() {
     var link = svg.selectAll(".link")
         .data(links)
         .enter().append("line")
-        .attr("class", function (d) {
-            return "link " + d.nature + " weight" + d.weight;
-        });
+        .attr("class", function (d) { return "link " + d.nature; })
+        .attr("stroke-width", function(d) { return (d.weight * 2); });
 
     // Create the node circles.
     var node = svg.selectAll(".node")
