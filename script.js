@@ -24,9 +24,24 @@ var force = d3.layout.force()
         // changes how close nodes will get to each other. Neg is farther apart.
         .charge(-300);
 
-// filtered types
+// filters
 var typeFilterList = [];
+var minWeight = 0;
+
 $("#Filters").text(typeFilterList.join(" "));
+
+$("#minWeightSlider").slider({
+    value: 0,
+    min: 0,
+    max: 5,
+    step: 1,
+    slide: function (event, ui) {
+        $("#minWeight").val(ui.value);
+        minWeight = ui.value;
+        filter();
+        update();
+    }
+});
 
 // filter button event handlers
 $(".toggle").on("click", function() {
@@ -43,16 +58,20 @@ $(".toggle").on("click", function() {
 
 // filter function
 function filter() {
-    console.log(typeFilterList);
+//    console.log(typeFilterList);
     //	add and remove links from data based on type filters
     storeLinks.forEach(function(link) {
         link.filtered = false;
         typeFilterList.forEach(function(filter) {
             if (link.nature === filter ) {
                 link.filtered = true;
-                console.log(link.id + filter + " filtered")
+//                console.log(link.id + filter + " filtered")
             }
         });
+        
+        if (link.weight <= minWeight) {
+            link.filtered = true;
+        }
     });
     
     $("#Filters").text(typeFilterList.join(" "));
