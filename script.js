@@ -14,24 +14,25 @@ var svg = d3.select("body").append("svg")
 var storeNodes;
 var storeLinks;
 
+// filters
+var typeFilterList = [];
+var minWeight = 1;
+
 //Want to have different labels
 // SETTING UP THE FORCE LAYOUT
 var force = d3.layout.force()
         //using width/height from above, but size is mainly det'd by linkDistance and charge
         .size([width, height])
         // how far between nodes                         
-        .linkDistance(80)
+        .linkDistance(120)
         // changes how close nodes will get to each other. Neg is farther apart.
-        .charge(-300);
+        .charge(-600);
 
-// filters
-var typeFilterList = [];
-var minWeight = 0;
-
-$("#Filters").text(typeFilterList.join(" "));
+// formating
+$(".toggle").button();
 
 $("#minWeightSlider").slider({
-    value: 0,
+    value: 1,
     min: 0,
     max: 5,
     step: 1,
@@ -127,6 +128,7 @@ d3.csv(nodepath, function (nodes) {
         storeNodes = nodes;
         storeLinks = links;
         
+        filter();
         update();
     });
 });
@@ -156,11 +158,14 @@ function update() {
         .data(nodes)
         .enter().append("g")
         .attr("class", "node")
+        .attr("id", function (d) {
+            return d.name;
+        })
         .call(force.drag);
 
     //put in little circles to drag
     node.append("circle")
-        .attr("r", 4.5)
+        .attr("r", 6)
         .attr("class", function (d) {
             return "node " + d.group;
         })

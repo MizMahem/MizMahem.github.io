@@ -13,32 +13,8 @@ div#minWeightSlider {
 
 .node text {
     pointer-events: none;
-    font: 15px sans-serif;
+    font: 1em sans-serif;
     font-weight: bolder;
-}
-
-.node.group1{
-    fill: green;
-    stroke-opacity: .3; 
-    stroke-width: 4;
-}
-
-.node.group2{
-    fill: red;
-    stroke-opacity: .3; 
-    stroke-width: 4;
-}
-
-.node.group3 {
-    fill: blue;
-    stroke-opacity: .3;
-    stroke-width: 4; 
-}
-
-.node.group4 {
-    fill: black;
-    stroke-opacity: .3; 
-    stroke-width: 4;
 }
 
 .link {
