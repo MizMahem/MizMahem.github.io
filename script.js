@@ -2,16 +2,16 @@
 var linkpath = ("Edges.csv");
 var nodepath = ("Nodes.csv");
 
-var width = 750, height = 750;
+// sizing variables
+var width = 1000, height = 1000;
 var baseSize = 10;
 var sizeMult = 2;
 
 var color = d3.scale.category20();
 
 var svg = d3.select("body").append("svg")
-        .attr("width", width)
-        .attr("height", height)
-		.attr("id", "graph");
+            .attr("viewBox", "0 0 1000 1000")
+            .attr("id", "graph");
 
 // data stores
 var storeNodes;
