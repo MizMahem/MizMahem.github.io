@@ -2,7 +2,7 @@
 var linkpath = ("Edges.csv");
 var nodepath = ("Nodes.csv");
 
-var width = 1000, height = 1000;
+var width = 750, height = 750;
 var baseSize = 10;
 var sizeMult = 2;
 
