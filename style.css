@@ -72,7 +72,7 @@ div#weightFilterSlider {
 
 .link.Familial     { stroke: green; }
 
- text.edgeDesc {
+ text.linkDesc {
 	text-anchor: middle;
 	font: .75em sans-serif;
 }

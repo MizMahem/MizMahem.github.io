@@ -20,7 +20,7 @@ var storeLinks;
 // filters
 var typeFilterList = [];
 var minWeight = 1;
-var maxWeight = 5;
+var maxWeight = 6;
 
 //Want to have different labels
 // SETTING UP THE FORCE LAYOUT
@@ -37,9 +37,9 @@ $(".toggle").button();
 
 $("#weightFilterSlider").slider({
 	range: true,
-    values: [1, 5],
+    values: [1, 6],
     min: 0,
-    max: 5,
+    max: 6,
     step: 1,
     slide: function (event, ui) {
         $("#weightFilterDisp").val(ui.values.join(" - "));
@@ -79,7 +79,7 @@ function filter() {
         if (link.weight <= minWeight) {
             link.filtered = true;
         }
-		if (link.weight > maxWeight) {
+		if (link.weight >= maxWeight) {
             link.filtered = true;
         }
     });
@@ -151,12 +151,6 @@ function update() {
         .attr("class", function (d) { return "link " + d.nature; })
         .attr("stroke-width", function(d) { return baseSize/2+(d.weight*sizeMult); });
 
-	var linkLabels = svg.selectAll(".link-label")
-		.data(links)
-		.enter().append('text')
-		.attr("class", "edgeDesc")
-		.text(function(d) { return d.desc; });
-
     // Create the node circles.
     var node = svg.selectAll(".node")
         .data(nodes)
@@ -171,6 +165,22 @@ function update() {
     force.nodes(nodes).links(links).start();
 
 	// these calculations have to come after force because weight is not calculated till then.
+	// link paths for labels
+//	var linkPaths = svg.selectAll(".linkPath")
+//		.data(links)
+//		.enter().append('path')
+//		.attr("id", function(d) { return "link"+d.id; })
+//		.attr("d", function(d) { return ["M", d.source.x, d.source.y, "L", d.target.x, d.target.y].join(" "); });
+
+	// link labels
+	var linkLabels = svg.selectAll(".linkLabel")
+		.data(links)
+		.enter().append('text')
+		.attr("class", "linkDesc")
+//		.append('textPath')
+//      .attr("xlink:href", function(d,i) { return "link"+i; })
+		.text(function(d) { return d.desc; });
+
 	//put in little circles to drag
 	node.append("circle")
         .attr("r", function (d) { return baseSize+(d.weight*sizeMult); })
@@ -199,9 +209,10 @@ function update() {
 			.attr("y2", function (d) { return d.target.y; });
 
 		linkLabels
-			.attr("x", function(d) {return ((d.source.x + d.target.x) / 2); })
-			.attr("y", function(d) { return ((d.source.y + d.target.y) / 2);
-        });
+			.attr("x", function(d) { return ((d.source.x + d.target.x) / 2); })
+			.attr("y", function(d) { return ((d.source.y + d.target.y) / 2); });
+
+//		linkPaths.attr('d', function(d) { return  ["M", d.source.x, d.source.y, "L", d.target.x, d.target.y].join(" "); });
 
         //I think that translate changes all of the x and ys at once instead of one by one?
         node.attr("transform", function (d) {
