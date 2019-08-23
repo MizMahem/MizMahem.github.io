@@ -11,9 +11,9 @@ var svg = d3.select("body").append("svg")
             .attr("viewBox", "0 0 1000 1000")
             .attr("id", "graph");
 
-// data stores
-var storeNodes;
-var storeLinks;
+// store for data sources
+var sourceNodes;
+var sourceLinks;
 
 // filters
 var minWeight = 1;
@@ -65,7 +65,7 @@ $("#typeFilters .toggle").on("click", function() {
 function filter() {
     console.log(typeFilterList);
     //	add and remove links from data based on type filters
-    storeLinks.forEach(function(link) {        
+    sourceLinks.forEach(function(link) {        
         link.filtered = false;
         
         Object.keys(typeFilterList).forEach(function(filter) {
@@ -82,7 +82,7 @@ function filter() {
         }
     });
     
-    console.log(storeLinks);
+    console.log(sourceLinks);
 }
 
 // get our data
@@ -121,8 +121,8 @@ d3.csv(nodepath, function (nodes) {
         var nodes = d3.values(nodecollector);
         var links = d3.values(linkcollector);
         
-        storeNodes = nodes;
-        storeLinks = links;
+        sourceNodes = nodes;
+        sourceLinks = links;
         
         filter();
         update();
@@ -131,9 +131,9 @@ d3.csv(nodepath, function (nodes) {
 
 // general update pattern for updating the graph
 function update() {
-    var nodes = storeNodes;
+    var nodes = sourceNodes;
     var links = [];
-    storeLinks.forEach(function(link) {
+    sourceLinks.forEach(function(link) {
         if(link.filtered === false) {
             links.push(link);
 //            console.log(link.id, link.filtered);
@@ -147,7 +147,7 @@ function update() {
         .data(links)
         .enter().append("line")
         .attr("class", function (d) { return "link " + d.nature; })
-        .attr("stroke-width", function(d) { return baseSize/2+(d.weight*sizeMult); });
+        .attr("stroke-width", function(d) { return baseSize/2+(d.weight*(sizeMult+1)); });
 
     // Create the node circles.
     var node = svg.selectAll(".node")
