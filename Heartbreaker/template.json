@@ -1,0 +1,55 @@
+{
+  "Actor": {
+    "types": ["character"],
+    "templates": {
+      "base": {
+        "wounds": {
+          "minor": { "value": 1, "min": 0, "max": 99},
+          "moderate": { "value": 1, "min": 0, "max": 99},
+          "serious": { "value": 1, "min": 0, "max": 99},
+          "critical": { "value": 1, "min": 0, "max": 99}
+        }
+      }
+    },
+    "character": {
+      "templates": ["base"],
+      "biography": "",
+      "abilities": {
+        "str": {
+          "value": 0
+        },
+        "dex": {
+          "value": 0
+        },
+        "con": {
+          "value": 0
+        },
+        "int": {
+          "value": 0
+        },
+        "wis": {
+          "value": 0
+        },
+        "cha": {
+          "value": 0
+        }
+      }
+    }
+  },
+  "Item": {
+    "types": ["item", "feature"],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "item": {
+      "templates": ["base"],
+      "quantity": 1,
+      "weight": 0
+    },
+    "feature": {
+      "templates": ["base"]
+    }
+  }
+}
