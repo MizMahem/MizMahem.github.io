@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Heartbreaker", "Heartbreaker.njsproj", "{D6B21713-9C7E-4B3C-8A72-F03D3D76E803}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6B21713-9C7E-4B3C-8A72-F03D3D76E803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6B21713-9C7E-4B3C-8A72-F03D3D76E803}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6B21713-9C7E-4B3C-8A72-F03D3D76E803}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6B21713-9C7E-4B3C-8A72-F03D3D76E803}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C81BA7A-BBB3-4148-99DF-A87C9FA5BE81}
+	EndGlobalSection
+EndGlobal
