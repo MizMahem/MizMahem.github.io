@@ -11,12 +11,11 @@ function enable() {
 }
 
 function talk() {
-    var sentance = ritaMarkov.generate();    
-    $("p#Speech").append(sentance+"</br>");
+  $("#Speech").append(`<li>${ritaMarkov.generate()}</li>`);
 }
 
 function clear() {
-    $("p#Speech").empty();
+    $("#Speech").empty();
     console.log("bongo");
 }
 
