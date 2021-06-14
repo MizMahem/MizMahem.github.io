@@ -1,4 +1,5 @@
-var ritaMarkov = RiTa.markov(4);
+var ritaMarkov = RiTa.markov(10);
+enable();
 
 function enable() {
     $.get("./data/anon-nibbles.txt", function (data) {
