@@ -2,15 +2,15 @@ var ritaMarkov = RiTa.markov(4);
 
 function enable() {
     $.get("./data/anon-nibbles.txt", function (data) {
-      ritaMarkov.addText(data.split('\n'));
-      $("button").prop("disabled", false);
-      $("button#Talk").click(talk);
-      $("button#Clear").click(clear);
+        ritaMarkov.addText(data.split('\n'));
+        $("button").prop("disabled", false);
+        $("button#Talk").click(talk);
+        $("button#Clear").click(clear);
     });
 }
 
 function talk() {
-    var sentance = ritaMarkov.generateSentence();    
+    var sentance = ritaMarkov.generate();    
     $("p#Speech").append(sentance+"</br>");
 }
 
