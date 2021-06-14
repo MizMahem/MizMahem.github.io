@@ -1,13 +1,12 @@
 var ritaMarkov = RiTa.markov(4);
-var text = new Array();
-$.get("./data/anon-nibbles.txt", function (data) {
-  ritaMarkov.addText(data.split('\n'));
-});
 
 function enable() {
-    $("button").prop("disabled", false);
-    $("button#Talk").click(talk);
-    $("button#Clear").click(clear);
+    $.get("./data/anon-nibbles.txt", function (data) {
+      ritaMarkov.addText(data.split('\n'));
+      $("button").prop("disabled", false);
+      $("button#Talk").click(talk);
+      $("button#Clear").click(clear);
+    });
 }
 
 function talk() {
