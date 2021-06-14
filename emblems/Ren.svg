@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1000"
+   height="1000"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Lie Ren Emblem.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="812.40014"
+     inkscape:cy="327.91044"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       orientation="1,0"
+       position="500,553.66072"
+       id="guide2993" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-52.362183)">
+    <path
+       style="fill:#e28bb8;fill-opacity:1;stroke:none"
+       d="m 499.99998,164.99767 c -157.64722,325.96622 -71.28957,325.99421 -73.50042,546.18417 14.44691,-86.03679 20.32163,-258.37792 73.50042,-258.37792 53.1788,0 59.05352,172.34113 73.50042,258.37792 -2.21085,-220.18996 84.14683,-220.21795 -73.50042,-546.18417 z M 174.45788,288.90643 C 143.65218,468.43106 286.39611,555.09605 407.06841,704.00076 399.65871,431.86487 323.10162,406.94529 174.45788,288.90643 z m 651.08425,0 C 676.89833,406.94529 600.34125,431.86487 592.93155,704.00076 713.60383,555.09605 856.34784,468.43106 825.54213,288.90643 z M 499.99998,486.73802 C 462.92819,562.57874 453.23916,674.69314 438.89043,764.40628 357.80076,695.8318 277.21537,638.43649 195.8603,600.22718 c 13.55382,143.32544 129.00136,324.55709 243.03013,338.77781 35.03874,4.36974 41.66106,-12.53168 61.10955,-12.53168 19.44849,0 26.07081,16.90142 61.10955,12.53168 114.0288,-14.22072 229.4763,-195.45237 243.03011,-338.77781 -81.35501,38.20931 -161.9404,95.60462 -243.0301,164.1791 C 546.76081,674.69314 537.07178,562.57874 499.99999,486.73802 z M -1.25e-5,523.34743 C 139.51565,613.38823 70.446578,682.59325 248.66233,804.39502 163.45114,656.35708 177.15882,596.94297 188.116,587.97711 199.07319,579.0113 229.53239,596.40236 405.51955,717.37728 289.48274,617.29081 290.1623,525.45541 -1.25e-5,523.34743 z M 1000,523.34743 C 709.83763,525.45541 710.51724,617.29081 594.48041,717.37728 770.46754,596.40236 800.92674,579.0113 811.88393,587.97711 c 10.9572,8.96586 24.6649,68.37997 -60.5463,216.41791 C 929.55343,682.59325 860.48433,613.38823 1000,523.34743 z"
+       id="path2997"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
