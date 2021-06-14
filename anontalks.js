@@ -1,4 +1,4 @@
-var ritaMarkov = RiTa.markov(10);
+var ritaMarkov = RiTa.markov(2);
 enable();
 
 function enable() {
