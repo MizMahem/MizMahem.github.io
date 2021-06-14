@@ -1,5 +1,8 @@
-var ritaMarkov = new RiMarkov(4);
-ritaMarkov.loadFrom("./data/anon-nibbles.txt", enable);
+var ritaMarkov = RiTa.markov(4);
+var text = new Array();
+$.get("./data/anon-nibbles.txt", function (data) {
+  ritaMarkov.addText(data.split('\n'));
+});
 
 function enable() {
     $("button").prop("disabled", false);
