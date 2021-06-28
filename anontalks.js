@@ -2,7 +2,7 @@ var ritaMarkov = RiTa.markov(2);
 enable();
 
 function enable() {
-    $.get("./data/anon-nibbles.txt", function (data) {
+    $.get("./data/non-acts.txt", function (data) {
         ritaMarkov.addText(data.split('\n'));
         $("button").prop("disabled", false);
         $("button#Talk").click(talk);
