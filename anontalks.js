@@ -3,7 +3,7 @@ enable();
 
 function enable() {
     $.get("./data/non-acts.txt", function (data) {
-        ritaMarkov.addText(shuffle(data.split('\n')).slice(0,1000));
+        ritaMarkov.addText(shuffle(data.split('\n')).slice(0,10000));
         $("button").prop("disabled", false);
         $("button#Talk").click(talk);
         $("button#Clear").click(clear);
